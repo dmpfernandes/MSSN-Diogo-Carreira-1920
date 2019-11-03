@@ -1,8 +1,7 @@
-package tpc2.ex2;
-import processing.IProcessingApp;
+package processing;
+import graph.TestSubPlot;
 import processing.core.PApplet;
-import tpc2.Exercicio1;
-import tpc2.ex3.Exercicio3;
+import sd.MySDGraph;
 
 public class ProcessingSetup extends PApplet
 {
@@ -12,7 +11,7 @@ public class ProcessingSetup extends PApplet
 	@Override
 	public void settings()
 	{
-		size(1500, 1000);
+		size(1200, 900);
 	}
 	
 	@Override
@@ -45,10 +44,7 @@ public class ProcessingSetup extends PApplet
 		
 	public static void main(String[] args) 
 	{
-//		app = new LSystemApp();
-//		app = new Exercicio1();
-		app = new Exercicio2();
-//		app = new Exercicio3();
+		app = new TestSubPlot();
 		PApplet.main(ProcessingSetup.class);
 	}
 }

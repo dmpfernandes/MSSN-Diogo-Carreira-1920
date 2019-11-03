@@ -1,4 +1,4 @@
-package tpc2.ex2;
+package fractals;
 
 import graph.SubPlot;
 import processing.core.PApplet;
@@ -41,11 +41,10 @@ public class Turtle
 		for (int i = 0; i < lsystem.getSequence().length(); i++) {
 			char c = lsystem.getSequence().charAt(i);
 
-			if (c == 'F') {
+			if (c == 'F' || c == 'G') {
 				p.line(0, 0, len, 0);
 				p.translate(len, 0);
 			}
-			else if (c == 'G') p.ellipse(0, 0, 100, 100);
 			else if (c == 'f') p.translate(len, 0);
 			else if (c == '+') p.rotate(theta);
 			else if (c == '-') p.rotate(-theta);
@@ -53,5 +52,4 @@ public class Turtle
 			else if (c == ']') p.popMatrix();
 		} 
 	}
-
 }

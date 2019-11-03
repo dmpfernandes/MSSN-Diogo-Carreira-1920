@@ -27,9 +27,9 @@ public class Exercicio2 implements IProcessingApp
 		//primerio exemplo
 //		ruleset[0] = new Rule('F', "F[[-FF]+F+F]");
 		//segundo exemplo
-		ruleset[0] = new Rule('F', "G[+F]-F");
+		ruleset[0] = new Rule('F', "GGGGGG");
 		ruleset[1] = new Rule('G', "GG");
-		lsys = new LSystem("F", ruleset);
+		lsys = new LSystem("FG", ruleset);
 		turtle = new Turtle(p, plot, 2.4f, PApplet.radians(10), false);
 	}
 
