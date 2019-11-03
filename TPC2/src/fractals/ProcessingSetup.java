@@ -1,7 +1,7 @@
 package fractals;
 import processing.IProcessingApp;
 import processing.core.PApplet;
-import tpc2.Exercicio1;
+import tpc2.ex1.Exercicio1;
 
 public class ProcessingSetup extends PApplet
 {
@@ -11,7 +11,7 @@ public class ProcessingSetup extends PApplet
 	@Override
 	public void settings()
 	{
-		size(2000, 2000);
+		size(1000, 1000);
 	}
 	
 	@Override

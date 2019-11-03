@@ -1,15 +1,16 @@
-package tpc2.ex2;
+package tpc2.ex1;
 
+import fractals.LSystem;
+import fractals.Rule;
+import fractals.Turtle;
 import graph.SubPlot;
 import processing.IProcessingApp;
 
 // see https://en.wikipedia.org/wiki/L-system
 
 import processing.core.PApplet;
-import tpc2.LSystem;
-import tpc2.Rule;
 
-public class Exercicio2 implements IProcessingApp 
+public class Exercicio1 implements IProcessingApp 
 {
 	private LSystem lsys;
 	private Turtle turtle;
@@ -23,16 +24,15 @@ public class Exercicio2 implements IProcessingApp
 	public void setup(PApplet p) 
 	{
 		plot = new SubPlot(window, viewport, p.width, p.height);
-		Rule[] ruleset = new Rule[2];
+		Rule[] ruleset = new Rule[1];
 //		ruleset[0] = new Rule('F', "FF+[+F-F-F]-[-F+F+F]");
 //		ruleset[0] = new Rule('F', "F[[+F]-F]");
 		//primerio exemplo
 //		ruleset[0] = new Rule('F', "F[[-FF]+F+F]");
 		//segundo exemplo
-		ruleset[0] = new Rule('F', " G[+F]-F");
-		ruleset[1] = new Rule('G', "GG");
+		ruleset[0] = new Rule('F', "f[F-[FF]+[FF]+F]");
 		lsys = new LSystem("F", ruleset);
-		turtle = new Turtle(p, plot, 1f, PApplet.radians(20), false);
+		turtle = new Turtle(p, plot, 2f, PApplet.radians(10), false);
 	}
 
 	@Override

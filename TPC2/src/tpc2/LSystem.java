@@ -1,4 +1,4 @@
-package tpc2.ex2;
+package tpc2;
 
 public class LSystem 
 {

@@ -1,18 +1,21 @@
-package tpc2;
+package tpc2.ex5;
 
-import fractals.LSystem;
-import fractals.Rule;
-import fractals.Turtle;
 import graph.SubPlot;
 import processing.IProcessingApp;
 
 // see https://en.wikipedia.org/wiki/L-system
 
 import processing.core.PApplet;
+import tpc2.LSystem;
+import tpc2.Rule;
+import tpc2.StocasticLSystem;
 
-public class Exercicio1 implements IProcessingApp 
+
+public class Exercicio5 implements IProcessingApp 
 {
 	private LSystem lsys;
+//	private StocasticLSystem lsys;
+
 	private Turtle turtle;
 	private double[] startingPos = {0, 0};
 
@@ -24,15 +27,21 @@ public class Exercicio1 implements IProcessingApp
 	public void setup(PApplet p) 
 	{
 		plot = new SubPlot(window, viewport, p.width, p.height);
-		Rule[] ruleset = new Rule[1];
-//		ruleset[0] = new Rule('F', "FF+[+F-F-F]-[-F+F+F]");
-//		ruleset[0] = new Rule('F', "F[[+F]-F]");
-		//primerio exemplo
-//		ruleset[0] = new Rule('F', "F[[-FF]+F+F]");
-		//segundo exemplo
-		ruleset[0] = new Rule('F', "f[F-[FF]+[FF]+F]");
-		lsys = new LSystem("F", ruleset);
-		turtle = new Turtle(p, plot, 2f, PApplet.radians(10), false);
+		Rule[] kochCurve = new Rule[1];
+
+//		primerio exemplo 
+//		kochCurve[0] = new Rule('F', "F+F--F+F");
+//		lsys = new LSystem("F", kochCurve);
+		
+//		koch snowflake 
+		kochCurve[0] = new Rule('F', "F+F--F+F");
+		lsys = new LSystem("+F--F--F", kochCurve);
+		
+//		stocastic koch snowflake
+//		kochCurve[0] = new Rule('F', "F+F--F+F");
+//		lsys = new StocasticLSystem("+F--F--F", kochCurve, 0.5f);
+
+		turtle = new Turtle(p, plot, 0.05f, PApplet.radians(60), false);
 	}
 
 	@Override

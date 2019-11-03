@@ -53,7 +53,7 @@ public class Turtle
 		} 
 	}
 
-	public void render(tpc2.ex2.LSystem lsys) {
+	public void render(tpc2.LSystem lsys) {
 		// TODO Auto-generated method stub
 		
 	}

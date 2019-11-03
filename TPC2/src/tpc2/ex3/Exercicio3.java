@@ -6,10 +6,10 @@ import processing.IProcessingApp;
 // see https://en.wikipedia.org/wiki/L-system
 
 import processing.core.PApplet;
-import tpc2.ex2.LSystem;
-import tpc2.ex2.Rule;
-import tpc2.ex2.StocasticLSystem;
-import tpc2.ex2.Turtle;
+import tpc2.LSystem;
+import tpc2.Rule;
+import tpc2.StocasticLSystem;
+
 
 public class Exercicio3 implements IProcessingApp 
 {
@@ -30,12 +30,12 @@ public class Exercicio3 implements IProcessingApp
 		Rule[] kochCurve = new Rule[1];
 
 //		primerio exemplo 
-		kochCurve[0] = new Rule('F', "F+F--F+F");
-		lsys = new LSystem("F", kochCurve);
+//		kochCurve[0] = new Rule('F', "F+F--F+F");
+//		lsys = new LSystem("F", kochCurve);
 		
 //		koch snowflake 
-//		kochCurve[0] = new Rule('F', "F+F--F+F");
-//		lsys = new LSystem("+F--F--F", kochCurve);
+		kochCurve[0] = new Rule('F', "F+F--F+F");
+		lsys = new LSystem("+F--F--F", kochCurve);
 		
 //		stocastic koch snowflake
 //		kochCurve[0] = new Rule('F', "F+F--F+F");

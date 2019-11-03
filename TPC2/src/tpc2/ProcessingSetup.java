@@ -1,7 +1,8 @@
-package tpc2.ex2;
+package tpc2;
 import processing.IProcessingApp;
 import processing.core.PApplet;
-import tpc2.Exercicio1;
+import tpc2.ex1.Exercicio1;
+import tpc2.ex2.Exercicio2;
 import tpc2.ex3.Exercicio3;
 
 public class ProcessingSetup extends PApplet
