@@ -32,7 +32,7 @@ public class Exercicio2 implements IProcessingApp
 		ruleset[0] = new Rule('F', " G[+F]-F");
 		ruleset[1] = new Rule('G', "GG");
 		lsys = new LSystem("F", ruleset);
-		turtle = new Turtle(p, plot, 1f, PApplet.radians(20), false);
+		turtle = new Turtle(p, plot, 0.5f, PApplet.radians(20), false);
 	}
 
 	@Override

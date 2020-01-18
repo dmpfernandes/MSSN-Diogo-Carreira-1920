@@ -48,8 +48,8 @@ public class ProcessingSetup extends PApplet
 	{
 //		app = new LSystemApp();
 //		app = new Exercicio1();
-		app = new Exercicio2();
-//		app = new Exercicio3();
+//		app = new Exercicio2();
+		app = new Exercicio3();
 		PApplet.main(ProcessingSetup.class);
 	}
 }

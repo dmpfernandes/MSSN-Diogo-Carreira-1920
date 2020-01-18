@@ -13,8 +13,8 @@ import tpc2.StocasticLSystem;
 
 public class Exercicio3 implements IProcessingApp 
 {
-	private LSystem lsys;
-//	private StocasticLSystem lsys;
+//	private LSystem lsys;
+	private StocasticLSystem lsys;
 
 	private Turtle turtle;
 	private double[] startingPos = {0, 0};
@@ -34,14 +34,14 @@ public class Exercicio3 implements IProcessingApp
 //		lsys = new LSystem("F", kochCurve);
 		
 //		koch snowflake 
-		kochCurve[0] = new Rule('F', "F+F--F+F");
-		lsys = new LSystem("+F--F--F", kochCurve);
+//		kochCurve[0] = new Rule('F', "F+F--F+F");
+//		lsys = new LSystem("+F--F--F", kochCurve);
 		
 //		stocastic koch snowflake
-//		kochCurve[0] = new Rule('F', "F+F--F+F");
-//		lsys = new StocasticLSystem("+F--F--F", kochCurve, 0.5f);
+		kochCurve[0] = new Rule('F', "F+F--F+F");
+		lsys = new StocasticLSystem("+F--F--F", kochCurve, 0.5f);
 
-		turtle = new Turtle(p, plot, 0.05f, PApplet.radians(60), false);
+		turtle = new Turtle(p, plot, 0.2f, PApplet.radians(60), false);
 	}
 
 	@Override
@@ -63,6 +63,6 @@ public class Exercicio3 implements IProcessingApp
 	{
 		System.out.println(lsys.getSequence());
 		lsys.nextGeneration();
-		turtle.scaling(0.85f);
+		turtle.scaling(0.75f);
 	}
 }
