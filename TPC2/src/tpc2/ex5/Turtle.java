@@ -43,11 +43,15 @@ public class Turtle
 		for (int i = 0; i < lsystem.getSequence().length(); i++) {
 			char c = lsystem.getSequence().charAt(i);
 
-			if (c == 'F' || c == 'G') {
-				p.line(0, 0, len, 0);
-				p.translate(len, 0);
+			if (c == 'G') {
+				p.line(0, 0, len*.5f, 0);
+				p.translate(len*.5f, 0);
 			}
-			else if (c == 'f') p.translate(len, 0);
+			else if (c == 'F') {
+				p.ellipse(0, 0, len*.5f, len*.5f);
+//				p.translate(len*.5f, 0);
+			}
+			else if (c == ' ') p.translate(len*.5f, 0);
 			else if (c == '+') p.rotate(theta);
 			else if (c == '-') p.rotate(-theta);
 			else if (c == '[') p.pushMatrix();
@@ -60,15 +64,13 @@ public class Turtle
 		for (int i = 0; i < lsystem.getSequence().length(); i++) {
 			char c = lsystem.getSequence().charAt(i);
 
-			if (c == 'G') {
+			if (c == 'F') {
 				p.line(0, 0, len*.5f, 0);
-				p.translate(len*.5f, len);
+				p.translate(len*.5f, 0);
 			}
-			else if (c == 'F') {
+			else if (c == 'G') {
 				p.ellipse(0, 0, len*0.2f, len*0.2f);
-//				p.translate(len, 0);
 			}
-			else if (c == 'f') p.translate(len, 10);
 			else if (c == '+') p.rotate(theta);
 			else if (c == '-') p.rotate(-theta);
 			else if (c == '[') p.pushMatrix();

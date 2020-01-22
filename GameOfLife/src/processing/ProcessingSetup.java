@@ -2,6 +2,7 @@ package processing;
 
 import processing.core.PApplet;
 import game.GameOfLife;
+import ca.TestGrid2D;
 
 public class ProcessingSetup extends PApplet
 {
@@ -11,7 +12,7 @@ public class ProcessingSetup extends PApplet
 	@Override
 	public void settings()
 	{
-		size(1200, 900);
+		size(1190, 840);
 	}
 	
 	@Override
@@ -45,6 +46,7 @@ public class ProcessingSetup extends PApplet
 	public static void main(String[] args) 
 	{
 		app = new GameOfLife();
+//		app = new TestGrid2D();
 		PApplet.main(ProcessingSetup.class);
 	}
 }

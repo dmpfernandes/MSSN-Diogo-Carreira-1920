@@ -11,13 +11,14 @@ import tpc2.Rule;
 import tpc2.StocasticLSystem;
 
 
+
 public class Exercicio5 implements IProcessingApp 
 {
+	
 	private LSystem lsys;
-//	private StocasticLSystem lsys;
 
-	private Turtle turtle;
-	private double[] startingPos = {0, 0};
+	private Turtle[] turtles;
+	
 
 	private double[] window = {-1, 1, 0, 15};
 	private float[] viewport = {0.1f, 0.1f, 0.6f, 0.8f};
@@ -27,21 +28,18 @@ public class Exercicio5 implements IProcessingApp
 	public void setup(PApplet p) 
 	{
 		plot = new SubPlot(window, viewport, p.width, p.height);
-		Rule[] kochCurve = new Rule[1];
+		Rule[] ruleset = new Rule[2];
 
-//		primerio exemplo 
-//		kochCurve[0] = new Rule('F', "F+F--F+F");
-//		lsys = new LSystem("F", kochCurve);
+		ruleset[0] = new Rule('F', "G[+F]-F");
+		ruleset[1] = new Rule('G', "G");
+		lsys = new LSystem("F", ruleset);
+		turtles = new Turtle[1];
+		for (int j = 0; j < turtles.length; j++) {
+			
+			turtles[j] = new Turtle(p, plot, 1f, PApplet.radians(20), false);
+			
+		}
 		
-//		koch snowflake 
-		kochCurve[0] = new Rule('F', "F+F--F+F");
-		lsys = new LSystem("+F--F--F", kochCurve);
-		
-//		stocastic koch snowflake
-//		kochCurve[0] = new Rule('F', "F+F--F+F");
-//		lsys = new StocasticLSystem("+F--F--F", kochCurve, 0.5f);
-
-		turtle = new Turtle(p, plot, 0.05f, PApplet.radians(60), false);
 	}
 
 	@Override
@@ -49,8 +47,12 @@ public class Exercicio5 implements IProcessingApp
 	{
 		float[] r = plot.getBoundingBox();
 		p.rect(r[0], r[1], r[2], r[3]);
-		turtle.setPose(startingPos, (float)Math.PI/2f);
-		turtle.render(lsys);	
+		for (int i = 0; i < turtles.length; i++) {
+			double[] startingPos = {0,0};
+			turtles[i].setPose(startingPos, (float)Math.PI/2f);
+			turtles[i].render(lsys);
+		}
+			
 	}
 
 	@Override
@@ -63,6 +65,12 @@ public class Exercicio5 implements IProcessingApp
 	{
 		System.out.println(lsys.getSequence());
 		lsys.nextGeneration();
-		turtle.scaling(0.85f);
+		for (int i = 0; i < turtles.length; i++) {
+			turtles[i].scaling(0.85f);
+		}
+		
 	}
+		
+
+	
 }

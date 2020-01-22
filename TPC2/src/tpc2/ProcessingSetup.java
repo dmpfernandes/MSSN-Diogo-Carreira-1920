@@ -4,6 +4,7 @@ import processing.core.PApplet;
 import tpc2.ex1.Exercicio1;
 import tpc2.ex2.Exercicio2;
 import tpc2.ex3.Exercicio3;
+import tpc2.ex5.Exercicio5;
 
 public class ProcessingSetup extends PApplet
 {
@@ -49,7 +50,8 @@ public class ProcessingSetup extends PApplet
 //		app = new LSystemApp();
 //		app = new Exercicio1();
 //		app = new Exercicio2();
-		app = new Exercicio3();
+//		app = new Exercicio3();
+		app = new Exercicio5();
 		PApplet.main(ProcessingSetup.class);
 	}
 }
